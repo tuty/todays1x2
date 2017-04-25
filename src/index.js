@@ -11,6 +11,12 @@ require('./favicon.ico'); // Tell webpack to load favicon.ico
 import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.
 import { syncHistoryWithStore } from 'react-router-redux';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
+
 const store = configureStore();
 
 // Create an enhanced history that syncs navigation events with the store
@@ -36,37 +42,39 @@ if (module.hot) {
   });
 }
 
+///////////////////////////////////////////////////////
+
 // import func to test merging
 
-import { getUsers, deleteUser } from './api/userApi';
+// import { getUsers, deleteUser } from './api/userApi';
 
 // Populate table of users via API call.
 
-getUsers().then(result => {
-    let usersBody = ``;
+// getUsers().then(result => {
+//     let usersBody = ``;
 
-    result.forEach(user => {
-        usersBody += `<tr>
-            <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
-            <td>${user.id}</td>
-            <td>${user.firstName}</td>
-            <td>${user.lastName}</td>
-            <td>${user.email}</td>
-            </tr>
-        `;
-    });
+//     result.forEach(user => {
+//         usersBody += `<tr>
+//             <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
+//             <td>${user.id}</td>
+//             <td>${user.firstName}</td>
+//             <td>${user.lastName}</td>
+//             <td>${user.email}</td>
+//             </tr>
+//         `;
+//     });
 
-    global.document.getElementById('users').innerHTML = usersBody;
+//     global.document.getElementById('users').innerHTML = usersBody;
 
-    const deleteLinks = global.document.getElementsByClassName('deleteUser');
+//     const deleteLinks = global.document.getElementsByClassName('deleteUser');
 
-    Array.from(deleteLinks, link => {
-        link.onclick = (event) => {
-            const element = event.target;
-            event.preventDefault();
-            deleteUser(element.attributes["data-id"].value);
-            const row = element.parentNode.parentNode;
-            row.parentNode.removeChild(row)
-        }
-    })
-});
+//     Array.from(deleteLinks, link => {
+//         link.onclick = (event) => {
+//             const element = event.target;
+//             event.preventDefault();
+//             deleteUser(element.attributes["data-id"].value);
+//             const row = element.parentNode.parentNode;
+//             row.parentNode.removeChild(row);
+//         };
+//     });
+// });
