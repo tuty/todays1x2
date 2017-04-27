@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router';
 
 import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
 import IconMenu from 'material-ui/IconMenu';
@@ -60,6 +61,17 @@ class Header extends Component {
                         />
                     </ToolbarGroup>
                     <ToolbarGroup lastChild={true}>
+                        <Link
+                            to={'/tipsters'}
+                            className={'nav-item'}
+                        >
+                            <i className="material-icons">&#xE7FC;</i>
+                            <div
+                                className={'label'}
+                            >
+                                Tipsters
+                            </div>
+                        </Link>
                         <ToolbarSeparator
                             style={{
                                 'background-color': '#FFF',

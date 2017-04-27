@@ -2,6 +2,13 @@
     background-color: #283E4A;
     width: 100%;
     .app-header {
+        .nav-item {
+            color: #FFF;
+            * {
+                @include flex();
+                justify-content: center;
+            }
+        }
         .avatar-container {
             @include flex();
             justify-content: center;
