@@ -1,0 +1,21 @@
+.app-header-container {
+    background-color: #283E4A;
+    width: 100%;
+    .app-header {
+        .avatar-container {
+            @include flex();
+            justify-content: center;
+        }
+        .label {
+            @include flex();
+            justify-content: center;
+            font-size: 0.8em;
+            color: #FFF;
+            padding: 0.1em;
+            .material-icons {
+                font-size: 1rem;
+            }
+        }
+
+    }
+}

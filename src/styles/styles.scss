@@ -1,5 +1,6 @@
 @import 'core/_reset';
 @import 'core/_normalize';
-@import './utils/polifills.scss';
+@import './utils/polifills';
 
-@import '../components/HomePage/homepage.scss';
+@import '../components/Header/header';
+@import '../components/HomePage/homepage';
