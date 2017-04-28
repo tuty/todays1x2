@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     -webkit-align-items: center;
     align-items: center;
     width: 100%;
-    height: ${window.innerHeight - 64}px;
+    height: 100vh;
     color: #FFF;
     background-color: red;
     background-image: url('http://eridubet.com/wp-content/uploads/2015/03/France-leage-girl-win-predictions-1024x576.jpg');

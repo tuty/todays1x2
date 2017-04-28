@@ -21,7 +21,7 @@ const HeaderDrawer = ({ title, handleCloseDrawer, openDrawer }) => {
             <Toolbar
                 className={'app__drawer-header'}
                 style={{
-                    "background-color": "#283E4A"
+                    "backgroundColor": "#283E4A"
                 }}
             >
                 <ToolbarGroup
