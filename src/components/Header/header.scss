@@ -8,6 +8,19 @@
         .nav-item:not(:first-child) {
             min-width: 90px;
         }
+        .nav-item:after {
+            content: '';
+            display: block;
+            margin: auto;
+            height: 1px;
+            width: 0px;
+            background: transparent;
+            transition: width .5s ease, background-color .5s ease;
+        }
+        .nav-item:hover:after {
+            width: 100%;
+            background: #FFF;
+        }
     }
 }
 

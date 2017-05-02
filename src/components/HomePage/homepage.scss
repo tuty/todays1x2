@@ -1,9 +1,6 @@
 $center-align: center;
 
-.home-page {
-    @include flex();
-    @include flex-align-items($center-align);
-    justify-content: center;
+.home-page-intro {
     width: 100%;
     height: 100vh;
     color: #FFF;
@@ -14,4 +11,30 @@ $center-align: center;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-color: red;
+    background-blend-mode: multiply;
+    .content {
+        @include flex();
+        height: 100%;
+        .intro-title-container {
+            width: 60%;
+            height: 100%;
+            color: #FFF;
+            font-family: 'Indie Flower, cursive',
+        }
+    }
+}
+
+.center-aligned-item-container {
+    @include flex();
+    @include flex-align-items($center-align);
+    justify-content: $center-align;
+    & > :first-child {
+        max-width: 80%;
+    }
+}
+
+.content {
+    max-width: 1128px;
+    margin: 0 auto;
 }

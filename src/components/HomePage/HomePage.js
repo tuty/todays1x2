@@ -3,16 +3,25 @@ import { Link } from 'react-router';
 
 const HomePage = () => {
     return (
-        <main className = "home-page">
-            <div className = "home-page__center-aligned">
-                <h1>React Slingshot</h1>
+        <main className="home-page">
+            <section className="home-page-intro">
+                <div
+                    className="content"
+                >
+                    <section className="intro-title-container center-aligned-item-container">
+                        <div
+                            className="intro-title"
+                        >
+                            <h1>WELCOME</h1>
+                            <h2>to the social network for football betting tips</h2>
+                        </div>
+                    </section>
+                    <side
+                        className="login-form"
+                    ></side>
+                </div>
+            </section>
 
-                <h2>Get Started</h2>
-                <ol>
-                    <li>Review the <Link to="fuel-savings">demo app</Link></li>
-                    <li>Remove the demo and start coding: npm run remove-demo</li>
-                </ol>
-            </div>
         </main>
     );
 };
