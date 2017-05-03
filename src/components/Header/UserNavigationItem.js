@@ -29,7 +29,7 @@ class UserNavigationItem extends Component {
 
         return (
             <IconMenu
-                iconButtonElement={<UserNavigationItemContent avatarSize={avatarSize}/>}
+                iconButtonElement={<UserNavigationItemContent avatarSize={avatarSize} url={"https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/17021666_10209094475742381_2278686381581670974_n.jpg?oh=dd40dbb4d1132e013242ae1a67412db2&oe=598732FE"}/>}
                 open={openUserMenu}
                 onTouchTap={this.handleOnTouchTap}
                 onRequestChange={this.handleOnRequestChange}

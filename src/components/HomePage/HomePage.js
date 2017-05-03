@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
+
+import LoginForm from './LoginForm';
 
 const HomePage = () => {
     return (
@@ -12,13 +13,14 @@ const HomePage = () => {
                         <div
                             className="intro-title"
                         >
-                            <h1>WELCOME</h1>
-                            <h2>to the social network for football betting tips</h2>
+                            <h1>the social network for football betting tips</h1>
                         </div>
                     </section>
                     <side
-                        className="login-form"
-                    ></side>
+                        className="login-form-container center-aligned-item-container"
+                    >
+                        <LoginForm />
+                    </side>
                 </div>
             </section>
 

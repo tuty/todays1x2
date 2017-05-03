@@ -1,0 +1,15 @@
+.login-form {
+    header {
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+            font-family: 'Indie Flower, cursive';
+        }
+    }
+    .button-container {
+        @include flex();
+        @include flex-align-items($center-align);
+        justify-content: $center-align;
+        margin-bottom: 1em;
+    }
+}

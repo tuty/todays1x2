@@ -20,21 +20,18 @@ $center-align: center;
             width: 60%;
             height: 100%;
             color: #FFF;
-            font-family: 'Indie Flower, cursive',
+            font-family: 'Indie Flower, cursive';
+            .intro-title {
+                text-transform: uppercase;
+            }
+        }
+        .login-form-container {
+            width: 40%;
+            height: 100%;
+            color: #FFF;
+            & > :first-child {
+                max-width: 100%;
+            }
         }
     }
-}
-
-.center-aligned-item-container {
-    @include flex();
-    @include flex-align-items($center-align);
-    justify-content: $center-align;
-    & > :first-child {
-        max-width: 80%;
-    }
-}
-
-.content {
-    max-width: 1128px;
-    margin: 0 auto;
 }
