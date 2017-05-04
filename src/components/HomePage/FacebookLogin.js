@@ -1,26 +1,43 @@
 import React from 'react';
-import FacebookLogin from 'react-facebook-login';
+import PropTypes from 'prop-types';
 
-const responseFacebook = (response) => {
-    console.log(response);
+export default class FacebookButton extends React.Component {
+   constructor(props) {
+      super(props);
+
+      this.FB = props.fb;
+   }
+
+   componentDidMount() {
+      this.FB.Event.subscribe('auth.logout',
+         this.onLogout.bind(this));
+      this.FB.Event.subscribe('auth.statusChange',
+         this.onStatusChange.bind(this));
+   }
+
+   onStatusChange(response) {
+      console.log( response );
+
+      if( response.status === "connected" ) {
+         this.FB.api('/me', function(response) {
+            console.log( response );
+         });
+      }
+   }
+
+   onLogout(response) {
+       console.log(response);
+   }
+
+   render() {
+      return (
+          <div className={'button-container'}>
+            <div className="fb-login-button" data-width="300" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" />
+          </div>
+      );
+   }
 }
 
-const FacebookLoginButton = () => {
-    return (
-        <div
-            className={'button-container'}
-        >
-            <div className="fb-login-button" data-width="300" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" data-onlogin="checkLoginState();" />
-            <FacebookLogin
-                appId="131732787371720"
-                autoLoad={true}
-                fields="name,email,picture"
-                callback={responseFacebook}
-                cssClass="my-facebook-button-class"
-                icon="fa-facebook"
-            />
-        </div>
-    );
+FacebookButton.propTypes = {
+    fb: PropTypes.object.isRequired
 };
-
-export default FacebookLoginButton;

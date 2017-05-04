@@ -35,7 +35,7 @@ class LoginForm extends Component {
                 <div
                     className={'social-login-container'}
                 >
-                    <FacebookLogin />
+                    <FacebookLogin fb={window.FB}/>
                     <GoogleLogin />
                 </div>
             </Paper>
